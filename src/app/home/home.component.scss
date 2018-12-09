@@ -105,3 +105,25 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .home-title a {
+    display: none;
+  }
+
+  .home-content {
+    width: 100% !important;
+    flex-flow: column nowrap !important;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__describe {
+      text-align: center;
+    }
+
+    img {
+      width: 250px !important;
+      height: 250px !important;
+    }
+  }
+}
