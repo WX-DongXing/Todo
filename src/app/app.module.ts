@@ -6,11 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {MarkdownModule} from 'ngx-markdown';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import {ShareModule} from './share/share.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +21,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     BrowserAnimationsModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
+    ShareModule
   ],
   providers: [],
   bootstrap: [AppComponent]

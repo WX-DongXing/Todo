@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'introduce', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent },
   { path: 'tutorial', loadChildren: './tutorial/tutorial.module#TutorialModule' },
   { path: 'introduce', loadChildren: './introduce/introduce.module#IntroduceModule' },
   { path: '**', component: NotFoundComponent }
