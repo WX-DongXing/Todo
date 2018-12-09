@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>
+      <img class="sidenav-logo" src="../../../assets/images/angular.svg" alt="" />
+      <p>Angular Todo</p>
+    </mat-toolbar>
+    <div class="sidenav-user">
+      <div class="sidenav-user__image">
+        <img src="../../../assets/images/user.jpg" alt="">
+      </div>
+      <p class="sidenav-user__name">Charlie Adams</p>
+      <p class="sidenav-user__email">adams.charlie@gmail.com</p>
+    </div>
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon matListIcon color="primary">today</mat-icon>
+        <div matLine class="sidenav-list">
+          <p>我的一天</p>
+          <span>1</span>
+        </div>
+      </a>
+      <a mat-list-item>
+        <mat-icon matListIcon color="primary">star_border</mat-icon>
+        <div matLine class="sidenav-list">
+          <p>重要</p>
+          <span>1</span>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Angular Todo</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
