@@ -62,6 +62,7 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  outline: none;
   
   span {
     width: 20px;
@@ -74,5 +75,23 @@
     justify-content: center;
     align-items: center;
     font-size: 14px;
+  }
+}
+
+.sidenav-title {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    width: 100px;
+    height: 36px;
+    font-weight: 500;
+
+    img, span {
+      margin: 0 2px;
+    }
   }
 }

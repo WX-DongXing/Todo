@@ -1,0 +1,35 @@
+<div class="todo-wrap">
+  <div class="todo-header">
+    <h2>我的一天</h2>
+    <h3>{{time | amDateFormat:'LL, dddd'}}</h3>
+  </div>
+  <div class="todo-list">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let todo of todoList">
+        <mat-checkbox matListAvatar color="primary" (change)="checkTodo(todo)"></mat-checkbox>
+        <a matLine class="todo-list__title" [class.finished]="todo.finished">{{todo.title}}</a>
+        <button mat-icon-button color="primary" (click)="starTodo(todo)">
+          <mat-icon>{{todo.isStar? 'star' : 'star_border'}}</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteTodo(todo)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item class="todo-list__edit" *ngIf="add">
+        <div class="todo-list__edit-wrap">
+          <mat-form-field class="todo-list__input">
+            <input matInput autocomplete="off" [(ngModel)]="text" (keyup.enter)="addTodo()" autofocus>
+          </mat-form-field>
+          <button mat-icon-button color="primary" [disabled]="!text" (click)="addTodo()">
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+
+  </div>
+  <button mat-fab color="primary" class="todo-fab-button" (click)="addSwitch()" [disabled]="add">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

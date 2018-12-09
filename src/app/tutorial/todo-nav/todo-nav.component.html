@@ -17,16 +17,16 @@
     <mat-nav-list>
       <a mat-list-item>
         <mat-icon matListIcon color="primary">today</mat-icon>
-        <div matLine class="sidenav-list">
+        <div matLine class="sidenav-list" routerLink="/tutorial/today">
           <p>我的一天</p>
-          <span>1</span>
+          <span *ngIf="todayTodoList.length > 0">{{todayTodoList.length}}</span>
         </div>
       </a>
       <a mat-list-item>
         <mat-icon matListIcon color="primary">star_border</mat-icon>
-        <div matLine class="sidenav-list">
+        <div matLine class="sidenav-list" routerLink="/tutorial/star">
           <p>重要</p>
-          <span>1</span>
+          <span *ngIf="starTodoList.length > 0">{{starTodoList.length}}</span>
         </div>
       </a>
     </mat-nav-list>
@@ -41,8 +41,14 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Angular Todo</span>
+      <div class="sidenav-title">
+        <span>Angular Todo</span>
+        <a mat-button href="https://github.com/WX-DongXing/Todo" target="_blank">
+          <img src="../../../assets/images/github.svg" alt="">
+          <span>Github</span>
+        </a>
+      </div>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
