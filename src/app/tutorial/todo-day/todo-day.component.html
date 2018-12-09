@@ -5,8 +5,8 @@
   </div>
   <div class="todo-list">
     <mat-nav-list>
-      <mat-list-item *ngFor="let todo of todoList">
-        <mat-checkbox matListAvatar color="primary" (change)="checkTodo(todo)"></mat-checkbox>
+      <mat-list-item *ngFor="let todo of todayList">
+        <mat-checkbox matListAvatar color="primary" [checked]="todo.finished" (change)="checkTodo(todo)"></mat-checkbox>
         <a matLine class="todo-list__title" [class.finished]="todo.finished">{{todo.title}}</a>
         <button mat-icon-button color="primary" (click)="starTodo(todo)">
           <mat-icon>{{todo.isStar? 'star' : 'star_border'}}</mat-icon>
@@ -14,6 +14,7 @@
         <button mat-icon-button color="warn" (click)="deleteTodo(todo)">
           <mat-icon>delete</mat-icon>
         </button>
+        <mat-divider></mat-divider>
       </mat-list-item>
 
       <mat-list-item class="todo-list__edit" *ngIf="add">

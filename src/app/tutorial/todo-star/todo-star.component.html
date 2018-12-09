@@ -1,3 +1,20 @@
-<p>
-  todo-star works!
-</p>
+<div class="todo-wrap">
+  <div class="todo-header">
+    <h2>重要</h2>
+    <h3>{{time | amDateFormat:'LL, dddd'}}</h3>
+  </div>
+  <div class="todo-list">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let todo of starList">
+        <mat-checkbox matListAvatar color="primary" [checked]="todo.finished" (change)="checkTodo(todo)"></mat-checkbox>
+        <a matLine class="todo-list__title" [class.finished]="todo.finished">{{todo.title}}</a>
+        <button mat-icon-button color="primary" (click)="starTodo(todo)">
+          <mat-icon>{{todo.isStar? 'star' : 'star_border'}}</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteTodo(todo)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>
