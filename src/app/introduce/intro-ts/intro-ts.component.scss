@@ -11,5 +11,12 @@
 .intro-markdown {
   max-width: 800px;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 16px;
   position: relative;
+
+  img {
+    max-height: 200px;
+    max-width: 100%;
+  }
 }

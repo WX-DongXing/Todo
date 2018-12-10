@@ -8,8 +8,8 @@
       <p>Angular</p>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/introduce/typescript" routerLinkActive="active">Typescript</a>
-      <a mat-list-item routerLink="/introduce/angular" routerLinkActive="active">Angular</a>
+      <a mat-list-item routerLink="/introduce/typescript" (click)="drawer.mode === 'over' ? drawer.close() : ''" routerLinkActive="active">Typescript</a>
+      <a mat-list-item routerLink="/introduce/angular" (click)="drawer.mode === 'over' ? drawer.close() : ''" routerLinkActive="active">Angular</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
