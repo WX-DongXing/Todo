@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroNgComponent implements OnInit {
 
+  text: '';
   constructor() { }
 
   ngOnInit() {
