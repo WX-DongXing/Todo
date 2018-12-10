@@ -15,16 +15,16 @@
       <p class="sidenav-user__email">adams.charlie@gmail.com</p>
     </div>
     <mat-nav-list>
-      <a mat-list-item (click)="drawer.mode === 'over' ? drawer.close() : ''">
+      <a mat-list-item (click)="drawer.mode === 'over' ? drawer.close() : ''"  routerLink="/tutorial/today" routerLinkActive="active">
         <mat-icon matListIcon color="primary">today</mat-icon>
-        <div matLine class="sidenav-list" routerLink="/tutorial/today">
+        <div matLine class="sidenav-list">
           <p>我的一天</p>
           <span *ngIf="todayTodoList.length > 0">{{todayTodoList.length}}</span>
         </div>
       </a>
-      <a mat-list-item (click)="drawer.mode === 'over' ? drawer.close() : ''">
+      <a mat-list-item (click)="drawer.mode === 'over' ? drawer.close() : ''" routerLink="/tutorial/star" routerLinkActive="active">
         <mat-icon matListIcon color="primary">star_border</mat-icon>
-        <div matLine class="sidenav-list" routerLink="/tutorial/star">
+        <div matLine class="sidenav-list">
           <p>重要</p>
           <span *ngIf="starTodoList.length > 0">{{starTodoList.length}}</span>
         </div>

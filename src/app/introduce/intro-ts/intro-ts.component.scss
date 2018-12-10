@@ -1,0 +1,15 @@
+.intro-wrap {
+  width: 100%;
+  max-height: calc(100vh - 64px);
+  overflow: auto;
+}
+
+.intro-content {
+  width: 100%;
+}
+
+.intro-markdown {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
