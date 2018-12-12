@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TodoService} from '../../service/todo.service';
 import {TodoModal} from '../../modal/todo.modal';
-import {TodayService} from '../../service/today.service';
 
 @Component({
   selector: 'app-todo-day',

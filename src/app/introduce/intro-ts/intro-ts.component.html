@@ -16,6 +16,53 @@
         ### 示例
         ***
 
+        #### 基础类型
+
+        ##### 布尔值
+        ```ts
+        let isDone: boolen = false;
+        ```
+        ##### 数字
+        ```ts
+        let decLiteral: number = 6;
+        ```
+        ##### 字符串
+        ```ts
+        let name: string = "bob";
+        console.log(`my name is ${{'{'}}name{{'}'}}`)
+        ```
+        ##### 数组
+        ```ts
+        let list: number[] = [1, 2, 3];
+        ```
+        ##### 元组 Tuple
+        元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同。
+        ```ts
+        let x: [string, number];
+        x = ['hello', 10];
+        ```
+        ##### 枚举
+        enum类型是对JavaScript标准数据类型的一个补充, 使用枚举类型可以为一组数值赋予友好的名字。
+        ```ts
+        enum Color {{'{'}}Red, Green, Blue{{'}'}}
+        let c: Color = Color.Green;
+        ```
+        ##### Any
+        有时候，我们会想要为那些在编程阶段还不清楚类型的变量指定一个类型。 这些值可能来自于动态的内容
+        ```ts
+        let notSure: any = 4;
+        notSure = "maybe a string instead";
+        notSure = false;
+        ```
+        ##### Void
+        某种程度上来说，void类型像是与any类型相反，它表示没有任何类型。 当一个函数没有返回值时，你通常会见到其返回值类型是 void：
+        ```ts
+        function warnUser(): void {{'{'}}
+          console.log("This is my warning message");
+        {{'}'}}
+        ```
+        ### 变量声明
+        ***
         #### JavaScript
         一般在Javascript中我们通过    <font color="red">var</font>
         关键字定义JavaScript变量。

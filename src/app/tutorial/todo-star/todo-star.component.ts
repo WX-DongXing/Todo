@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TodoModal} from '../../modal/todo.modal';
 import {TodoService} from '../../service/todo.service';
-import {StarService} from '../../service/star.service';
 
 @Component({
   selector: 'app-todo-star',
